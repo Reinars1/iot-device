@@ -11,6 +11,7 @@ Sensor::Sensor() {}
 void Sensor::init() {
   humidity_sensor_.init();
   temperature_sensor_.init();
+  log_info(LogModule::Sensor, Event::Boot);
 }
 
 SensorData Sensor::read() {

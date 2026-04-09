@@ -2,12 +2,23 @@
 
 // C
 #include <cstdint>
+#include <cstdio>
 
 // Log severity level
 enum class LogLevel : uint8_t { None = 0, Info, Warn, Error, Fatal };
 
 // Module unique ID to know which module caused a log
-enum class LogModule : uint8_t { None = 0, TemperatureSensor, HumiditySensor, Buffer, Uploader, Modem, Power, System };
+enum class LogModule : uint8_t {
+  None = 0,
+  TemperatureSensor,
+  HumiditySensor,
+  Sensor,
+  Buffer,
+  Uploader,
+  Modem,
+  Power,
+  System
+};
 
 constexpr size_t LogBufferCapacity{256};
 
