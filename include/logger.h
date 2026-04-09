@@ -23,7 +23,7 @@ constexpr uint8_t ReadFail{3};
 constexpr uint8_t BufferFull{4};
 constexpr uint8_t BufferEightyPercent{5};
 constexpr uint8_t UploadOk{6};
-constexpr uint8_t Uploadretry{7};
+constexpr uint8_t UploadRetry{7};
 constexpr uint8_t ModemAttachFail{8};
 constexpr uint8_t ModemTimeout{9};
 constexpr uint8_t SleepEnter{10};
@@ -43,13 +43,11 @@ struct LogEntry {
 #pragma pack(pop)
 
 namespace Logger {
-void init();
-
 // Stores binary entry and logs to console
 void log(LogLevel level, LogModule module, uint8_t event_code, uint32_t playload = 0);
 
-// Get logs that are saved, returns how many logs have been saved
-size_t get_logs(LogEntry* out, size_t max_count);
+// Get logs that are saved, return if log getting was successfull
+bool getLogs(LogEntry* out, size_t max_count);
 
 // clear all logs
 void clear();
