@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
-    # src/sensor.cpp
+    src/sensor.cpp
+    src/temperature_sensor.cpp
+    src/humidity_sensor.cpp
     # src/ring_buffer.cpp
     # src/uploader.cpp
     src/logger.cpp

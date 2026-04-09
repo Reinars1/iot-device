@@ -1,6 +1,7 @@
 // C
 #include <cstring>
 #include <cstdio>
+#include <ctime>
 
 // Developer
 #include "logger.h"
