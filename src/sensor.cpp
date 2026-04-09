@@ -18,9 +18,9 @@ SensorData Sensor::read() {
   SensorData sensor_data;
   sensor_data.timestamp = static_cast<uint32_t>(std::time(nullptr));
 
-  //* Temperature reading
+  // Temperature reading
   readWithRetryTemp(sensor_data);
-  //* Humidity reading
+  // Humidity reading
   readWithRetryHum(sensor_data);
   return sensor_data;
 }
@@ -36,7 +36,7 @@ void Sensor::readWithRetryTemp(SensorData& data) {
 
   log_warn(LogModule::TemperatureSensor, Event::ReadFail);
 
-  //* Retry up to MaxRetries times
+  // Retry up to MaxRetries times
   for (size_t i = 0; i < MaxRetries; i++) {
     temperature = temperature_sensor_.readTemperature();
     if (!std::isnan(temperature)) {
@@ -62,7 +62,7 @@ void Sensor::readWithRetryHum(SensorData& data) {
 
   log_warn(LogModule::HumiditySensor, Event::ReadFail);
 
-  //* Retry up to MaxRetries times
+  // Retry up to MaxRetries times
   for (size_t i = 0; i < MaxRetries; i++) {
     humidity = humidity_sensor_.readHumidity();
     if (!std::isnan(humidity)) {
