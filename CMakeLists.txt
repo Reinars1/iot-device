@@ -8,10 +8,10 @@ add_executable(${PROJECT_NAME}
     src/sensor.cpp
     src/temperature_sensor.cpp
     src/humidity_sensor.cpp
-    # src/ring_buffer.cpp
-    # src/uploader.cpp
+    src/ring_buffer.cpp
+    src/uploader.cpp
     src/logger.cpp
-    # src/power.cpp
+    src/power.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
