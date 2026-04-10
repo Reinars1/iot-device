@@ -32,11 +32,12 @@ constexpr uint8_t ReadFail{3};
 constexpr uint8_t BufferFull{4};
 constexpr uint8_t BufferEightyPercent{5};
 constexpr uint8_t UploadOk{6};
-constexpr uint8_t UploadRetry{7};
-constexpr uint8_t ModemAttachFail{8};
-constexpr uint8_t ModemTimeout{9};
-constexpr uint8_t SleepEnter{10};
-constexpr uint8_t SleepExit{11};
+constexpr uint8_t UploadFail{7};
+constexpr uint8_t UploadRetry{8};
+constexpr uint8_t ModemAttachFail{9};
+constexpr uint8_t ModemTimeout{10};
+constexpr uint8_t SleepEnter{11};
+constexpr uint8_t SleepExit{12};
 
 } // namespace Event
 
