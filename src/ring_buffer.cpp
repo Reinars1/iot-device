@@ -41,7 +41,7 @@ void RingBuffer::clear() {
 size_t RingBuffer::getAll(SensorData* out, size_t max_count) {
   if (out == nullptr || count_ == 0) {
     log_warn(LogModule::Buffer, Event::ReadFail);
-    return;
+    return 0;
   }
 
   size_t to_copy = (max_count < count_) ? max_count : count_;
