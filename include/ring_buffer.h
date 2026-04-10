@@ -7,6 +7,8 @@
 // Developer
 #include "sensor.h"
 
+static constexpr size_t BufferCapacity{72}; // 12 readings/hour. 6h
+
 class RingBuffer {
  public:
   RingBuffer();
@@ -19,10 +21,9 @@ class RingBuffer {
   void clear();
 
   // Get buffer for upload without deleting data
-  void getAll(SensorData* out, size_t max_count);
+  size_t getAll(SensorData* out, size_t max_count);
 
  private:
-  static constexpr size_t BufferCapacity{72}; // 12 readings/hour. 6h
   static constexpr uint8_t EightPercent{80};
 
   SensorData buffer_[BufferCapacity];
