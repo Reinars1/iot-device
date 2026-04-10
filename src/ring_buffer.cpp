@@ -15,8 +15,8 @@ void RingBuffer::push(SensorData& reading) {
   head_ = (head_ + 1) % BufferCapacity;
   count_++;
 
-  if (EightyPercentReached()) {
-    log_warn(LogModule::Buffer, Event::BufferEightyPercent);
+  if (UploadThresholdReached()) {
+    log_warn(LogModule::Buffer, Event::BufferThresholdReached);
   }
 }
 
@@ -28,8 +28,8 @@ bool RingBuffer::isFull() {
   return count_ == BufferCapacity;
 }
 
-bool RingBuffer::EightyPercentReached() {
-  return count_ >= (BufferCapacity * EightPercent / 100);
+bool RingBuffer::UploadThresholdReached() {
+  return count_ >= (BufferCapacity * UploadThreshold / 100);
 }
 
 void RingBuffer::clear() {

@@ -17,14 +17,14 @@ class RingBuffer {
 
   size_t count();
   bool isFull();
-  bool EightyPercentReached();
+  bool UploadThresholdReached();
   void clear();
 
   // Get buffer for upload without deleting data
   size_t getAll(SensorData* out, size_t max_count);
 
  private:
-  static constexpr uint8_t EightPercent{80};
+  static constexpr uint8_t UploadThreshold{80};
 
   SensorData buffer_[BufferCapacity];
   size_t head_{0};

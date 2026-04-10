@@ -30,7 +30,7 @@ constexpr uint8_t ShutDown{1};
 constexpr uint8_t ReadOk{2};
 constexpr uint8_t ReadFail{3};
 constexpr uint8_t BufferFull{4};
-constexpr uint8_t BufferEightyPercent{5};
+constexpr uint8_t BufferThresholdReached{5};
 constexpr uint8_t UploadOk{6};
 constexpr uint8_t UploadFail{7};
 constexpr uint8_t UploadRetry{8};

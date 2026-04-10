@@ -41,7 +41,7 @@ int main() {
     // --- Upload Task ---
     // On real RTOS: separate thread, wakes on 30-min timer
     // or when buffer signals high-water mark
-    if (readings_since_upload >= ReadingsPerUpload || ring_buffer.EightyPercentReached()) {
+    if (readings_since_upload >= ReadingsPerUpload || ring_buffer.UploadThresholdReached()) {
       if (uploader.uploadBatch()) {
         readings_since_upload = 0;
       }
